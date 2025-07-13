@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>博客列表</title>
+</head>
+<body>
+    <h1>博客列表</h1>
+    <p><a href="{% url 'add_blog' %}" style="text-decoration: none">➕新建博客</a></p>
+    <ul>
+        {% for blog in blogs %}
+            <li><a href="{% url 'blog_detail' blog.id %}" style="text-decoration: none">{{ blog.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>添加博客</title>
+</head>
+<body>
+    <h1>发布新博客</h1>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>标题：</label><br>
+        <input type="text" name="title" style="width: 300px;" /><br><br>
+
+        <label>内容：</label><br>
+        <textarea name="content" rows="10" cols="50"></textarea><br><br>
+
+        <input type="submit" value="发布" />
+    </form>
+
+    <br>
+    <a href="{% url 'blog_list' %}">返回博客列表</a>
+</body>
+</html>
