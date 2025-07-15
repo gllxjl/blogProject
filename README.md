@@ -25,7 +25,6 @@
 缓存命中率统计：通过 Redis `INFO` 指令获取 `keyspace_hits` 与 `keyspace_misses`。
 
 2.2、Redis 缓存键设计
-```text
 键名格式：blog_read_count_{blog_id}
 示例：blog_read_count_1
 
